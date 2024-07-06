@@ -8,6 +8,10 @@ eureka:
   instance:
     preferIpAddress: false # For local development. Set to false if you want to use the hostname in a DNS-enabled environment
     hostname: ${HOSTNAME:localhost}
+    non-secure-port-enabled: true
+    secure-port-enabled: false
+    non-secure-port: ${server.port}
+    secure-port: 443
 
 spring:
   application:
