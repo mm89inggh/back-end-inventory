@@ -16,7 +16,6 @@ public interface ProductoMapper {
         @Mapping(source = "quantity", target = "cantidad")
         @Mapping(source = "sellingPrice", target = "precioCompra")
         @Mapping(source = "purchasePrice", target = "precioVenta")
-        @Mapping(source = "id", target = "id")
         Producto toProduct(InventoryRequest request);
 
         @Mapping(source = "nombre", target = "name")
