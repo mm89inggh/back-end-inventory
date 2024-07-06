@@ -16,12 +16,14 @@ public interface ProductoMapper {
         @Mapping(source = "quantity", target = "cantidad")
         @Mapping(source = "sellingPrice", target = "precioCompra")
         @Mapping(source = "purchasePrice", target = "precioVenta")
+        @Mapping(source = "id", target = "id")
         Producto toProduct(InventoryRequest request);
 
         @Mapping(source = "nombre", target = "name")
         @Mapping(source = "cantidad", target = "quantity")
         @Mapping(source = "precioCompra", target = "sellingPrice")
         @Mapping(source = "precioVenta", target = "purchasePrice")
+        @Mapping(source = "id", target = "id")
         ProductoDto toProductoDto(Producto producto);
 
         List<ProductoDto> toProductosDto(List<Producto> productos);
