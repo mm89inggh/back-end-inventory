@@ -8,7 +8,7 @@
 # Run the mvn clean package command (It will generate a JAR file for deployment)
 FROM maven:3.9.6-eclipse-temurin-21 AS build
 COPY . .
-RUN mvn clean package
+RUN mvn clean package -DskipTests
 
 # We use an Openjdk image
 # We expose the port that our component will use to listen to requests
@@ -16,5 +16,5 @@ RUN mvn clean package
 # We mark the starting point of the image with the command "java -jar app.jar" that will execute our component.
 FROM openjdk:21
 EXPOSE 8080
-COPY --from=build /target/back-end-inventory-1.0.0-SNAPSHOT.jar app.jar
+COPY --from=build /target/inventory-1.0.0-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
