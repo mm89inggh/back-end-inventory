@@ -12,7 +12,7 @@ eureka:
     secure-port-enabled: false
     non-secure-port: ${server.port}
     secure-port: 443
-
+ 
 spring:
   application:
     name: inventories
