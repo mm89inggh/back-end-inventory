@@ -16,5 +16,5 @@ RUN mvn clean package
 # We mark the starting point of the image with the command "java -jar app.jar" that will execute our component.
 FROM openjdk:21
 EXPOSE 8080
-COPY --from=build /target/back-end-inventory*.jar app.jar
+COPY --from=build /target/back-end-inventory-1.0.0-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
